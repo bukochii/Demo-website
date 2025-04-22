@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyMesh Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<div class="scaled-container">
+  <div class="auth-container">
+    <!-- Button 1: Google Sign-Up -->
+    <button class="social-button google">
+      <img src="images\google.png" alt="Google Logo" class="social-icon">
+      <span>Sign up with Google</span>
+    </button>
+
+    <!-- Button 2: Email Sign-Up -->
+    <button class="social-button email" onclick="showForm()">
+        <img src="images\mail.png" alt="Google Logo" class="social-icon">
+      <span>Continue with email</span>
+    </button>
+
+    <!-- Form (Hidden by default) -->
+    <form id="signupForm" style="display: none;">
+      <!-- Input Fields -->
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+
+      <!-- Terms Checkbox -->
+      <div class="terms">
+        <input type="checkbox" id="terms" required>
+        <label for="terms" style="color: rgb(255, 255, 255);">
+          I agree with KeyMesh's 
+          <a href="#">Terms of Service</a>, 
+          <a href="#">Privacy Policy</a>, and 
+          default Notification Settings.
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="primary-button">Create Account</button>
+
+      <!-- Switch to Login -->
+      <div class="switch-auth">
+        Already have an account?
+        <a href="login.html">Sign in</a>
+      </div>
+
+      <!-- reCAPTCHA Notice -->
+      <p class="recaptcha-notice">
+        This site is protected by reCAPTCHA and the Google 
+        <a href="#">Privacy Policy</a> and 
+        <a href="#">Terms of Service</a> apply.
+      </p>
+    </form>
+  </div>
+</div>
+  <script src="signup.js"></script>
+</body>
+</html>

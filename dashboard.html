@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Logo Placeholder -->
+    <div class="logo-container">
+        <a href="index.html" class="logo link">
+        <img src="images\keymash logo.png" alt="Logo" class="logo" />
+        </a>
+    </div>
+
+    <!-- Top: Greeting & Standard Info -->
+    <header class="user-header">
+      <img src="images\profiles\@Krusagat.jpg" alt="Avatar" class="avatar"/>
+      <div class="user-details">
+        <h1>Welcome, Krusagat </h1>
+        <p>Member since Jan 2024 &middot; Level: Pro</p>
+      </div>
+    </header>
+
+    <!-- Radio‑dial navigation -->
+    <div class="dial">
+      <div class="indicator"></div>
+      <div class="options">
+        <div class="option" data-target="stickers"><span>Stickers</span></div>
+        <div class="option" data-target="achievements"><span>Achievements</span></div>
+        <div class="option" data-target="challenges"><span>Challenges</span></div>
+        <div class="option" data-target="earnings"><span>Earnings</span></div>
+      </div>
+    </div>
+
+    <!-- Content Panels -->
+    <section id="content">
+      <div id="stickers" class="content-section active">
+        <h2>Create &amp; Publish Stickers</h2>
+        <div class="sticker-placeholder">[Sticker Creator UI Here]</div>
+      </div>
+      <div id="achievements" class="content-section">
+        <h2>Your Achievements</h2>
+        <ul>
+          <li>First Sticker Published</li>
+          <li>100 Likes Milestone</li>
+        </ul>
+      </div>
+      <div id="challenges" class="content-section">
+        <h2>Ongoing Challenges</h2>
+        <ul>
+          <li>Design a Spring Collection</li>
+          <li>Win 10 New Followers</li>
+        </ul>
+      </div>
+      <div id="earnings" class="content-section">
+        <h2>Earnings Summary</h2>
+        <p>Total: $1,245.00</p>
+        <p>Last Payout: Apr 15, 2025</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

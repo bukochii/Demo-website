@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keymash Title Bar</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header class="title-bar">
+    <nav class="nav-container">
+      <!-- Left-aligned menu -->
+      <div class="left-group">
+        <!-- Modified Products section -->
+<div class="left-group">
+  <div class="dropdown">
+    <a href="#" class="nav-item">Products</a>
+    <div class="dropdown-content">
+      <a href="#">Keyboards</a>
+      <a href="#">Keycaps</a>
+      <a href="#">Switches</a>
+      <a href="#">Accessories</a>
+    </div>
+  </div>
+  <a href="#" class="nav-item">Creators</a>
+  <a href="#" class="nav-item">Leaderboard</a>
+  <a href="#" class="nav-item">Challenges</a>
+</div>
+
+      <!-- Centered logo -->
+      <a href="index.html" class="logo link">
+      <img src="images\keymash logo.png" alt="Keymash Logo" class="logo">
+    </a>
+
+      <!-- Right-aligned elements -->
+      <div class="right-group">
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-bar">
+          <button class="search-button">
+            <img src="images/search.png" alt="Search">
+          </button>
+        </div>
+        <a href="dashboard.html" class="nav-item dashboard">Dashboard</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="creators-carousel">
+      <h2 class="section-title">Top Creators</h2>
+      <div class="carousel-container">
+        <button class="carousel-nav prev">‹</button>
+        <div class="carousel-track">
+          <!-- Creator cards will be injected here by JavaScript -->
+        </div>
+        <button class="carousel-nav next">›</button>
+      </div>
+    </section>
+     
+  <!-- Slide Container -->
+  <div class="slide-container">
+    <div class="toggle-wrapper">
+      <!-- Invisible click zones for left/right -->
+      <div class="toggle-area left" data-target="stickers"></div>
+      <div class="toggle-area right" data-target="tokens"></div>
+      
+      <!-- Single sliding toggle button (starts on the left) -->
+      <button class="toggle-btn" data-state="stickers">Top stickers</button>
+    </div>
+
+    <!-- Slides: Only one slide is visible at a time -->
+    <div class="slides">
+      <!-- Slide 1: Top Stickers -->
+      <div class="slide stickers-slide active">
+        <div class="slide-heading"></div>
+        <div class="grid">
+          <!-- Sticker placeholders using actual images -->
+          <div class="item">
+            <img src="images/stickers/sticker 1.png" alt="Sticker 1">
+          </div>
+          <div class="item">
+            <img src="images/stickers/sticker 2.png" alt="Sticker 2">
+          </div>
+          <div class="item">
+            <img src="images/stickers/sticker 3.png" alt="Sticker 3">
+          </div>
+          <div class="item">
+            <img src="images/stickers/sticker 4.png" alt="Sticker 4">
+          </div>
+          <div class="item">
+            <img src="images/stickers/sticker 5.png" alt="Sticker 5">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2: Top Tokens -->
+      <div class="slide tokens-slide">
+        <div class="slide-heading"></div>
+        <div class="grid">
+          <!-- Placeholder items for tokens -->
+          <div class="item">
+            <img src="images/tokens/emblem1.jpg" alt="Token 1">
+          </div>
+          <div class="item">
+            <img src="images/tokens/emblem2.jpg" alt="Token 2">
+          </div>
+          <div class="item">
+            <img src="images/tokens/emblem3.jpg" alt="Token 3">
+          </div>
+          <div class="item">
+            <img src="images/tokens/emblem4.jpg" alt="Token 4">
+          </div>
+          <div class="item">
+            <img src="images/tokens/emblem5.jpg" alt="Token 5">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Log in/Sign Up Button Section -->
+  <section class="signup-section">
+    <a href="signup_login.html" class="signup-button">Log in/Sign Up</a>
+  </section>
+
+  </main>
+  <script src="shop.js"></script>
+</body>
+</html>

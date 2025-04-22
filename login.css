@@ -1,0 +1,131 @@
+/* reset & box‑sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* page background + font */
+  body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;           /* give room on very narrow viewports */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;              /* more breathing room between sections */
+    width: 100%;
+    max-width: 600px;       /* expanded substantially */
+    padding: 0 30px;        /* wider horizontal padding */
+  }
+  
+  /* --- Google button --- */
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 50px;     /* larger hit‑area */
+    font-size: 15px;        /* slightly bigger text */
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background 0.2s;
+  }
+  .google-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+  .google-btn:hover {
+    background: #f1f1f1;
+  }
+  
+  /* --- Email form --- */
+  .email-login h2 {
+    color: #ff5000;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .email-login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input-group label {
+    font-size: 16px;
+  }
+  .input-group .forgot {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .input-group .forgot:hover {
+    opacity: 0.8;
+  }
+  .input-group input {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+  
+  /* --- Login button --- */
+  .login-btn {
+    background: #ff5000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    
+  }
+  .login-btn:hover {
+    background: #e04a00;
+  }
+  
+  /* --- Sign‑up text --- */
+  .signup-text {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .signup-text a {
+    color: #ff5000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+  }
+  .signup-text a:hover {
+    opacity: 0.8;
+  }
+  

@@ -1,0 +1,540 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(0deg, #4800B4 0%, #EB0909 100%);
+  background-size: 300% 300%; /* Large gradient for smooth animation */
+  animation: page-gradient-shift 8s infinite alternate;
+}
+
+/* Keyframes for full-page gradient animation */
+@keyframes page-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 0% 80%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.title-bar {
+  background: #ffffff;
+  padding: 12px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Logo styling */
+.logo {
+  width: 80px; /* Increased size */
+  height: 81px; /* Increased size */
+  position: absolute;
+  left: 45%;
+  
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarges the logo on hover */
+}
+
+/* Enlargement animation */
+@keyframes enlarge-logo {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  100% {
+    transform: scale(2); /* Enlarge to double size */
+  }
+}
+
+/* Class to apply the enlargement animation */
+.enlarge {
+  animation: enlarge-logo 0.5s ease-out forwards;
+}
+
+/* Menu groups */
+.left-group, .right-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+}
+
+.left-group {
+  justify-content: flex-start;
+}
+
+.right-group {
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+/* Search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 8px 15px;
+}
+
+.search-bar {
+  border: none;
+  background: transparent;
+  padding: 5px 30px;
+  width: 150px;
+  font-size: 14px;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+/* Search button */
+.search-button {
+  width: 40px;
+  height: 40px;
+  background: #FF470A;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+  background: #000000;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.dashboard {
+  /* Fix padding fundamentals */
+  display: inline-flex; /* Changed from default <a> inline behavior */
+  align-items: center;
+  justify-content: center;
+  
+  /* Proper padding structure */
+  padding: 12px 18px !important; /* Top/Bottom | Left/Right */
+  line-height: 1;
+  
+  /* Border-box model */
+  box-sizing: border-box;
+  min-height: 42px; /* Minimum touch target size */
+  
+  /* Force override any conflicting styles */
+  border: 3px solid #FF470A !important; /* Explicit border */
+  
+  /* Existing styles */
+  border-radius: 38px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+  font-size: 14px;
+  text-decoration: none !important;
+}
+
+.dashboard:hover {
+  background: #FF470A;
+  color: #FFD500 !important;
+}
+
+/* Navigation items */
+.nav-item {
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1.53px;
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #FF470A;
+}
+
+/* Dropdown Fixes */
+/* Add these CSS fixes */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 5px); /* Space from parent */
+  left: -28%;
+  background: #FF470A;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  z-index: 9999; /* Higher than everything else */
+  pointer-events: none; /* Allows mouse interaction when visible */
+  display: flex;         /* Changed to flex container */
+  flex-direction: column; /* Stack items vertically */
+  width: max-content;    /* Width based on content */
+  white-space: nowrap;   /* Prevent text wrapping */
+  }
+
+  .dropdown-content a {
+    display: block;        /* Ensure full width */
+    width: 50%;          /* Take full container width */
+    box-sizing: border-box; /* Include padding in width */
+    text-decoration: none !important; /* Remove underline */
+    padding: 3px 25px; /* Increase horizontal spacing */
+    margin: 4px 0; /* Vertical spacing between items */
+    position: relative;
+    color: #ffffff;
+    font-size:13px ;
+  }
+
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-content a:hover {
+  color: #FFD500
+}
+
+.dropdown > .nav-item::after {
+  content: "›"; /* Sideways arrow */
+  display: inline-block;
+  font-size: 1.1em;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.dropdown:hover > .nav-item::after {
+  transform: rotate(90deg);
+}
+
+/* Top creators */
+.creators-carousel {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 100px;
+  box-shadow: 0 10px 30px #0000001a;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin: 0 40px;
+  position: relative;
+}
+
+
+.creator-card {
+  flex: 0 0 130px;
+  opacity: 0.3;
+  transform: scale(0.7);
+  transition: all 0.4s ease;
+  position: relative;
+  margin: 0 5px;
+}
+
+.creator-card.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.creator-card.adjacent {
+  opacity: 0.7;
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+.profile-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #FF470A;
+  background: #f8f8f8;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  text-align: center;
+  margin-top: 11px;
+  font-size: 10px;
+  color: #333;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FF470A;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.carousel-nav:hover {
+  background: #E03D00;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev { left: 20px; }
+.carousel-nav.next { right: 20px; }
+
+.creators-carousel {
+  text-align: center; /* Centers child elements */
+  font-size: 13px;
+}
+
+.section-title {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* Slide Container & Toggle Wrapper */
+.slide-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Toggle Wrapper */
+.toggle-wrapper {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+  background: #e6e6e6; /* Visible bar area */
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+
+/* Black background when in tokens state */
+.toggle-btn[data-state="tokens"] ~ .toggle-area {
+  /* This targets the bar when button is in tokens state */
+  & + .toggle-wrapper {
+    background: #000000;
+  }
+}
+
+/* Add orange border to tokens slide */
+.tokens-slide {
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+/* Invisible click zones */
+.toggle-area {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+.toggle-area.left {
+  left: 0;
+}
+.toggle-area.right {
+  right: 0;
+}
+
+/* Toggle Button styles */
+.toggle-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%; /* Button takes 30% of container's width */
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background: #FFD700;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 2;
+  /* Default state: stickers (button flush on left) */
+  transform: translateX(0);
+}
+/* Slides styling */
+.slides {
+  position: relative;
+  overflow: hidden; /* Contain content within slide area */
+}
+.slide {
+  display: none;
+  box-sizing: border-box;
+  padding: 0 40px; /* Match container padding */
+  max-width: 1200px; /* Match your site's max-width */
+  margin: 0 auto;
+}
+.slide.active {
+  display: block;
+}
+
+.slide-heading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+ 
+}
+
+/* Example slide backgrounds (adjust as needed) */
+.stickers-slide {
+    background: #000;
+    color: #FFD700;
+    border-radius: 20px; /* Match container radius */
+    padding: 2rem 0; /* Add padding for spacing */
+}
+.tokens-slide {
+  background: #FF470A;
+  color: white;
+  border-radius: 20px;
+  padding: 2rem 0;
+  border: 1px solid #ffffff1a;
+}
+
+/* Grid of placeholder items */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
+  gap: 1.5rem;
+  justify-content: center; /* Center grid items */
+  align-items: center; /* Vertical alignment */
+  padding: 0 20px; /* Add padding to match container */
+}
+
+/* Adjust item styling */
+.item {
+  background: #fffffff6;
+  border-radius: 8px;
+  padding: .5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+  min-width: 120px; /* Minimum item width */
+}
+
+.stickers-slide .item:hover {
+  background: #FF470A;
+}
+
+.tokens-slide .item:hover {
+  background: #FFD400;
+}
+
+.grid img {
+  max-width: 100%; /* Prevent image overflow */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center images in grid items */
+}
+
+
+
+/* Styling for the Sign Up button */
+.signup-section {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100px; /* Adjust height as needed */
+  margin: 40px 0; /* Space above and below the button */
+}
+
+/* Button styling */
+.signup-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  border: none;
+  border-radius: 38px;
+  background: linear-gradient(135deg, #FF470A 0%, #FFD700 100%);
+  box-shadow: 0 4px 10px rgba(255, 71, 10, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  /* Animation for hover/selection */
+  background-size: 200% 100%; /* Double the gradient size for animation */
+  background-position: 0% 50%; /* Start position */
+}
+
+/* Hover effect */
+.signup-button:hover {
+  animation: gradient-shift 2s infinite alternate;
+  box-shadow: 0 6px 15px rgba(255, 71, 10, 0.4);
+}
+
+/* Selected state  */
+.signup-button:focus {
+  outline: none;
+  animation: gradient-shift 2s infinite alternate;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

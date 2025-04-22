@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keymash Portfolio</title>
+    <link rel="stylesheet" href="globe.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+   
+  <!-- Lottie Player Script -->
+  <script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-container">
+  <dotlottie-player
+  src="https://lottie.host/3787f5f4-a5fa-4740-8e7f-3ce1b51ac30c/QZVPgT3WIk.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 300px; height: 300px"
+  loop
+  autoplay
+></dotlottie-player>
+</div>
+   
+    <main class="wireframe"> 
+  
+      <div class="div">
+        <div class="group">
+          <div class="overlap-group">
+            <img class="keymash-logo" src="https://c.animaapp.com/hSn4WGV3/img/keymash-logo-01-1@2x.png" alt="Keymash Logo" />
+          </div>
+        </div>
+        <div class="overlap-wrapper">
+          <div class="overlap">
+            <div class="rectangle"></div>
+            <div class="ellipse">
+              <img class="vector" src="https://c.animaapp.com/hSn4WGV3/img/vector-1.svg" alt="Down Arrow" />
+            </div>
+            <div class="text-wrapper" id="cycleText">Portfolio</div>
+           <!-- New Redirect Button Added -->
+      <button id="redirect-button" class="redirect-button">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main> 
+    <script src="index.js"></script>
+  </body>
+</html>

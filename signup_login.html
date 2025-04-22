@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up / Log In</title>
+  <link rel="stylesheet" href="signup_login.css">
+</head>
+<body>
+  <div class="card-container" onclick="flipCard()">
+    <!-- Front Side (Sign Up) -->
+    <div class="card front">
+      <a href="signup.html" class="card-link">
+        <h2>Sign Up</h2>
+        <p>Create a new account</p>
+      </a>
+    </div>
+
+    <!-- Back Side (Log In) -->
+    <div class="card back">
+      <a href="login.html" class="card-link">
+        <h2>Log In</h2>
+        <p>Already have an account?</p>
+      </a>
+    </div>
+
+    <!-- Flip button (optional) -->
+    <button class="flip-button">Flip ➔</button>
+  </div>
+
+  <script>
+    function flipCard() {
+      const container = document.querySelector('.card-container');
+      container.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>

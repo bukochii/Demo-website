@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Series 1: Google Sign‑in -->
+    <div class="google-login">
+      <button class="google-btn">
+        <img src="images\google.png"
+             alt="Google logo">
+        <span>Sign in with Google</span>
+      </button>
+    </div>
+
+    <!-- Series 2: Email Sign‑in -->
+    <div class="email-login">
+      <h2>Sign in with email</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="email">Username/Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <div class="input-header">
+            <label for="password">Password</label>
+            <a href="#" class="forgot">Forgot?</a>
+          </div>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <p class="signup-text">
+        Don't have an Account? <a href="signup.html">Sign up</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
